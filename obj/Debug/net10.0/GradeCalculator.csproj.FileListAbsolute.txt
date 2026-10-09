@@ -1,0 +1,15 @@
+/workspaces/GradeCalculator/bin/Debug/net10.0/GradeCalculator
+/workspaces/GradeCalculator/bin/Debug/net10.0/GradeCalculator.deps.json
+/workspaces/GradeCalculator/bin/Debug/net10.0/GradeCalculator.runtimeconfig.json
+/workspaces/GradeCalculator/bin/Debug/net10.0/GradeCalculator.dll
+/workspaces/GradeCalculator/bin/Debug/net10.0/GradeCalculator.pdb
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.AssemblyInfoInputs.cache
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.AssemblyInfo.cs
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.csproj.CoreCompileInputs.cache
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.sourcelink.json
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.dll
+/workspaces/GradeCalculator/obj/Debug/net10.0/refint/GradeCalculator.dll
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.pdb
+/workspaces/GradeCalculator/obj/Debug/net10.0/GradeCalculator.genruntimeconfig.cache
+/workspaces/GradeCalculator/obj/Debug/net10.0/ref/GradeCalculator.dll

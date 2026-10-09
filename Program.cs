@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 class GradeCalculator
 {
@@ -9,7 +9,7 @@ class GradeCalculator
         return (maths + physics + chemistry + computerScience) / 4;
     }
 
-    // Function to determine the grade from the average
+    // Function to determine the grade
     public string CalculateGrade(double average)
     {
         if (average >= 80)
@@ -44,7 +44,7 @@ class Program
             // Create an object of the GradeCalculator class
             GradeCalculator calculator = new GradeCalculator();
 
-            // Ask the user to enter marks for each subject
+            // Get marks from the user
             Console.Write("Enter Maths marks (0-100): ");
             double maths = Convert.ToDouble(Console.ReadLine());
 
@@ -57,28 +57,28 @@ class Program
             Console.Write("Enter Computer Science marks (0-100): ");
             double computerScience = Convert.ToDouble(Console.ReadLine());
 
-            // Check that all marks are within the valid range
+            // Check that marks are between 0 and 100
             if (maths < 0 || maths > 100 ||
                 physics < 0 || physics > 100 ||
                 chemistry < 0 || chemistry > 100 ||
                 computerScience < 0 || computerScience > 100)
             {
-                Console.WriteLine("Invalid marks. Please enter marks from 0 to 100.");
+                Console.WriteLine("Invalid marks. Enter marks from 0 to 100.");
                 return;
             }
 
-            // Call the function to calculate the average
+            // Calculate the average
             double average = calculator.CalculateAverage(
                 maths, physics, chemistry, computerScience);
 
-            // Call the function to calculate the grade
+            // Calculate the grade
             string grade = calculator.CalculateGrade(average);
 
-            // Display the average and grade
+            // Display the results
             Console.WriteLine("\nAverage marks: " + average.ToString("F2"));
             Console.WriteLine("Grade: " + grade);
 
-            // Use a switch statement to display the remarks
+            // Display a remark using a switch statement
             switch (grade)
             {
                 case "A":
@@ -100,25 +100,16 @@ class Program
                 case "F":
                     Console.WriteLine("Fail. Your grade is F");
                     break;
-
-                default:
-                    Console.WriteLine("Invalid grade.");
-                    break;
             }
         }
         catch (FormatException)
         {
-            // Handle input that is not a valid number
+            // Handle invalid input
             Console.WriteLine("Invalid input. Please enter numbers only.");
-        }
-        catch (OverflowException)
-        {
-            // Handle numbers that are too large to convert
-            Console.WriteLine("The number entered is too large.");
         }
         catch (Exception ex)
         {
-            // Handle any other unexpected errors
+            // Handle other errors
             Console.WriteLine("An error occurred: " + ex.Message);
         }
     }
