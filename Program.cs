@@ -1,0 +1,125 @@
+using System;
+
+class GradeCalculator
+{
+    // Function to calculate the average of four subjects
+    public double CalculateAverage(double maths, double physics,
+                                   double chemistry, double computerScience)
+    {
+        return (maths + physics + chemistry + computerScience) / 4;
+    }
+
+    // Function to determine the grade from the average
+    public string CalculateGrade(double average)
+    {
+        if (average >= 80)
+        {
+            return "A";
+        }
+        else if (average >= 70)
+        {
+            return "B";
+        }
+        else if (average >= 60)
+        {
+            return "C";
+        }
+        else if (average >= 50)
+        {
+            return "D";
+        }
+        else
+        {
+            return "F";
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            // Create an object of the GradeCalculator class
+            GradeCalculator calculator = new GradeCalculator();
+
+            // Ask the user to enter marks for each subject
+            Console.Write("Enter Maths marks (0-100): ");
+            double maths = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Physics marks (0-100): ");
+            double physics = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Chemistry marks (0-100): ");
+            double chemistry = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Computer Science marks (0-100): ");
+            double computerScience = Convert.ToDouble(Console.ReadLine());
+
+            // Check that all marks are within the valid range
+            if (maths < 0 || maths > 100 ||
+                physics < 0 || physics > 100 ||
+                chemistry < 0 || chemistry > 100 ||
+                computerScience < 0 || computerScience > 100)
+            {
+                Console.WriteLine("Invalid marks. Please enter marks from 0 to 100.");
+                return;
+            }
+
+            // Call the function to calculate the average
+            double average = calculator.CalculateAverage(
+                maths, physics, chemistry, computerScience);
+
+            // Call the function to calculate the grade
+            string grade = calculator.CalculateGrade(average);
+
+            // Display the average and grade
+            Console.WriteLine("\nAverage marks: " + average.ToString("F2"));
+            Console.WriteLine("Grade: " + grade);
+
+            // Use a switch statement to display the remarks
+            switch (grade)
+            {
+                case "A":
+                    Console.WriteLine("Excellent! Your grade is A");
+                    break;
+
+                case "B":
+                    Console.WriteLine("Good! Your grade is B");
+                    break;
+
+                case "C":
+                    Console.WriteLine("Satisfactory. Your grade is C");
+                    break;
+
+                case "D":
+                    Console.WriteLine("Pass. Your grade is D");
+                    break;
+
+                case "F":
+                    Console.WriteLine("Fail. Your grade is F");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid grade.");
+                    break;
+            }
+        }
+        catch (FormatException)
+        {
+            // Handle input that is not a valid number
+            Console.WriteLine("Invalid input. Please enter numbers only.");
+        }
+        catch (OverflowException)
+        {
+            // Handle numbers that are too large to convert
+            Console.WriteLine("The number entered is too large.");
+        }
+        catch (Exception ex)
+        {
+            // Handle any other unexpected errors
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+}
